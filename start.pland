@@ -1,0 +1,26 @@
+try{
+  var conString = "postgres://sol:datasol44@localhost/test1";
+
+  var Con = require "./DbCon";
+
+  var con = new Con(conString);
+
+  var sql = require "sql";
+  
+  sql.setDialect("postgres");
+  
+  var scan = require "./tablescan";
+  
+  var tab = *scan({
+    connection: con,
+    name: "tab2"
+  });
+  
+  
+  console.log(tab.table.columns);
+  
+
+
+}catch(e){
+  console.log(e);
+}

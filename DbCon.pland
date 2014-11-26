@@ -1,0 +1,39 @@
+
+var pg = require "pg";
+
+return class {
+  constructor: (parConStr){
+    this.conStr = parConStr;
+  },
+  query: (parSqlStr, parData){
+    
+    if (typeof(parSqlStr) == "object"){
+      parData = parSqlStr.values;
+      parSqlStr = parSqlStr.text;
+    };
+
+    var cb = new Callback();
+
+    pg.connect(this.conStr, cb);
+    
+    var conRes = *cb.promise;
+
+    if (conRes[0]){
+      throw conRes[0];
+    };
+
+    var client = conRes[1];
+    var done = conRes[2];
+    
+    cb = new promiseland.CallbackErrorFirst();
+    
+    client.query(parSqlStr, parData, cb);
+    
+
+    //call `done()` to release the client back to the pool
+    done();
+    
+    return *cb.promise;
+    
+  }
+};

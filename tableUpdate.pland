@@ -1,0 +1,58 @@
+var scan = require "./tablescan";
+
+var canConvert = (parExisting, parNew){
+  
+};
+
+return (par){
+  
+  var con = par.connection;
+  var table = par.table;
+  var indexes = par.indexes;
+  var pk = par.pk;
+  
+  var existing = *scan({
+    connection: con,
+    name: table.getName(),
+    schema: table.getSchema()
+  });
+  
+  var createTable = true;
+  var dif = false;
+  var droptemp = false;
+  if (existing){
+    var excols = existing.table.columns;
+    var cols = table.columns;
+    var i = 0;
+    if (cols.length == excols.length){
+      for (i = 0; i < cols.length; ++i){
+        if (cols[0].name != excols[0].name){
+          dif = true;
+          break;
+        };
+        if (cols[0].dataType != excols[0].dataType){
+          dif = true;
+          break;
+        };
+      };
+    }else{
+      dif = true;
+    };
+    if (dif){
+      existing.alter().rename('_temp_rename');
+      droptemp = true;
+    }else{
+      createTable = false;
+    };
+  };
+  
+  if (createTable){
+    *con.query(table.create());
+  };
+  
+  if (existing && dif){
+    
+  };
+  
+  
+};
