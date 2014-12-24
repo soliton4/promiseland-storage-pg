@@ -1,5 +1,5 @@
 try{
-  var conString = "postgres://sol:datasol44@localhost/test1";
+  var conString = "postgres://sol:soldb44@localhost/testdb1";
 
   var Con = require "./DbCon";
 
@@ -13,7 +13,7 @@ try{
   
   var tab = *scan({
     connection: con,
-    name: "tab2"
+    name: "tab1"
   });
   
   

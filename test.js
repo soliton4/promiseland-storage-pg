@@ -1,7 +1,5 @@
-pg = require("pg");
-
 var pg = require('pg');
-var conString = "postgres://sol:datasol44@localhost/test1";
+var conString = "postgres://sol:soldb44@localhost/testdb1";
 
 pg.connect(conString, function(err, client, done) {
   if(err) {
