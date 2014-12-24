@@ -65,9 +65,9 @@ var __requireFun = function(parModule){
         }, function(err){ returnPromise.reject(err); });
       }catch(e){ returnPromise.reject(e); };
       return returnPromise.promise;};
-    if (promiseland._hasModule({ hashStr: "f9d042eb944636a1dc6a19c5f7af448a" })){ return promiseland._getModule("f9d042eb944636a1dc6a19c5f7af448a"); };
+    if (promiseland._hasModule({ hashStr: "2e41d5b56f43c24608e5e5d60a232ab3" })){ return promiseland._getModule("2e41d5b56f43c24608e5e5d60a232ab3"); };
 var PL$1 = new __Promise();
-promiseland._registerModule({ hashStr: "f9d042eb944636a1dc6a19c5f7af448a", "module": PL$1, promising: true });
+promiseland._registerModule({ hashStr: "2e41d5b56f43c24608e5e5d60a232ab3", "module": PL$1, promising: true });
 var PL$19/*console*/;try{PL$19/*console*/ = console;}catch(e){};
 var PL$2 = (function(){
 "use strict";
@@ -84,14 +84,14 @@ var PL$5 = new __Promise();
 var PL$6 = new __Promise();
 var PL$7/*try catch*/ = function(code){ return function(res){ try{code(res);}catch(e){ PL$6.resolve(e); }; }; };
 var PL$8 = function(e){ PL$6.resolve(e); };
-PL$7/*try catch*/(function(){PL$9/*conString*/ = "postgres://sol:datasol44@localhost/test1";
+PL$7/*try catch*/(function(){PL$9/*conString*/ = "postgres://sol:soldb44@localhost/testdb1";
 __requireFun("./DbCon").then(PL$7/*try catch*/(function(PL$11){PL$10/*Con*/ = PL$11;
 PL$12/*con*/ = new PL$10/*Con*/(PL$9/*conString*/);
 __requireFun("sql").then(PL$7/*try catch*/(function(PL$14){PL$13/*sql*/ = PL$14;
 PL$13/*sql*/["setDialect"]("postgres");;
 __requireFun("./tablescan").then(PL$7/*try catch*/(function(PL$16){PL$15/*scan*/ = PL$16;
 PL$15/*scan*/({"connection": PL$12/*con*/,
-"name": "tab2"}).then(PL$7/*try catch*/(function(PL$18){PL$17/*tab*/ = PL$18;
+"name": "tab1"}).then(PL$7/*try catch*/(function(PL$18){PL$17/*tab*/ = PL$18;
 PL$19/*console*/["log"](PL$17/*tab*/["table"]["columns"]);;
 PL$5.resolve();
 }), PL$8);
